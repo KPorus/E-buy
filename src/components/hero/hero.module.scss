@@ -1,0 +1,26 @@
+.heroContainer {
+    @apply flex my-4 gap-4;
+  
+    .catagoryContainer {
+      @apply w-2/5 border-2 border-[#353535];
+      height: fit-content;
+  
+      .catagoryTitle {
+        @apply bg-[#7777] py-4 text-xl text-center text-[#ffffff] font-medium;
+      }
+  
+      .catagory {
+        @apply flex justify-between items-center text-base text-[#353535] border-b-2 border-[#353535] py-4 px-3 font-medium;
+  
+        &:hover {
+          @apply text-white bg-[#de4644];
+        }
+      }
+    }
+  
+    .bannerContainer {
+      @apply w-full;
+      height: fit-content;
+    }
+  }
+  
