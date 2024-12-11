@@ -1,4 +1,4 @@
-import { category } from "../common/dummy/dummy";
+import { category } from "../../common/dummy/dummy";
 import styles from "./hero.module.scss";
 
 const Catagory = () => {
