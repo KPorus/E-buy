@@ -1,0 +1,24 @@
+.btnContainer {
+	@apply block text-center cursor-pointer;
+	padding: 10px 0px;
+	font-size: 13px;
+	width: 100%;
+}
+
+.viewMore,
+.purchase {
+	padding: 8px 20px;
+	border: none;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.viewMore {
+	background-color: #de4644;
+	color: white;
+}
+
+.purchase {
+	background-color: white;
+	color: black;
+}

@@ -1,51 +1,97 @@
-.sliderButton {
-    position: absolute;
-    top: 45%;
-    z-index: 1;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 25px 10px;
-    cursor: pointer;
-    box-shadow: -2px 2px 12px -2px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease;
-  }
-  
-  .disabledButton {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  // Add specific styles for the right and left buttons
-  .sliderButton.right {
-    right: -1px;
-  }
-  
-  .sliderButton.left {
-    left: 0px;
-  }
-  
+.imageContainer {
+  position: relative;
+  overflow: hidden;
 
-  .indicatorsContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+  .overlay {
     position: absolute;
-    bottom: 10px;
     width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.336);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+      // font-family: ;
+      margin: 0;
+      font-size: 1.875rem;
+    }
+
+    h2 {
+      font-weight: 500;
+      margin: 10px 0 20px;
+      font-size: 2.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 18px;
+    }
   }
-  
-  .indicator {
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .activeIndicator {
-    background-color: #fff; // Make the active indicator more visible
-  }
-  
+
+}
+
+.sliderButton {
+  position: absolute;
+  top: 86%;
+  z-index: 1;
+  background-color: #de4644;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  box-shadow: -2px 2px 12px -2px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+}
+
+
+.disabledButton {
+  background: transparent;
+  border: 1px solid #fff;
+  // opacity: 0.5; 
+  padding: 9px 10px;
+  cursor: not-allowed;
+}
+
+// Add specific styles for the right and left buttons
+.sliderButton.right {
+  right: 52%;
+}
+
+.sliderButton.left {
+  left: 48%;
+}
+
+
+// .indicatorsContainer {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 10px;
+//   position: absolute;
+//   bottom: 10px;
+//   width: 100%;
+// }
+
+// .indicator {
+//   width: 10px;
+//   height: 10px;
+//   margin: 0 5px;
+//   background-color: rgba(255, 255, 255, 0.5);
+//   border-radius: 50%;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// }
+
+// .activeIndicator {
+//   background-color: #fff; // Make the active indicator more visible
+// }
