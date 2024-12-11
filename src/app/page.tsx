@@ -1,11 +1,9 @@
-import Nav from "@/components/nav";
-import Hero from "@/components/hero";
+import DesktopPage from "@/components/desktop";
 
 export default function Home() {
   return (
     <div className="container">
-      <Nav />
-      <Hero />
+      <DesktopPage />
     </div>
   );
 }
