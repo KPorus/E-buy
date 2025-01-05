@@ -1,6 +1,6 @@
 import Nav from "@/components/desktop/nav";
 import Hero from "@/components/desktop/hero";
-import FeatureProducts from "./feature_products";
+import FeatureProducts from "./highlighted-offers";
 const DesktopPage = () => {
   return (
     <div>

@@ -8,6 +8,7 @@ const buttonStyles = cva(`${styles.btnContainer}`, {
       primary: "bg-[#4398fe] text-white",
       viewMore: styles.viewMore,
       purchase: styles.purchase,
+      shopNow: styles.shopNow,
     },
     defaultVariants: {
       intent: "primary",
