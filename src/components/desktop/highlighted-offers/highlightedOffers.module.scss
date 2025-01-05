@@ -1,7 +1,7 @@
-.featureContainer {
-    @apply flex justify-between items-center gap-4;
+.highlightedContainer {
+    @apply flex justify-between items-center gap-4 mb-6;
 
-    .feature {
+    .highlightedOffer {
         text-align: center;
         width: 500px;
         position: relative;
@@ -13,10 +13,14 @@
         object-fit: cover;
     }
 
-    .featureBody {
-        @apply flex items-center flex-col px-7;
+    .highlightedBody {
+        @apply flex items-center flex-col mx-7 mb-7 pb-3;
+        width: -webkit-fill-available;
+        width: -moz-available; 
+        width: stretch;
+        // width: 100%; 
+        text-align: center;
         line-height: 1.5;
-        text-align: left;
         margin-top: 20px;
         background: rgba(0, 0, 0, 0.568);
         color: #fff;

@@ -2,10 +2,14 @@
 	@apply block text-center cursor-pointer;
 	padding: 10px 0px;
 	font-size: 13px;
-	width: 100%;
+	// width: 100%;
+	white-space: nowrap;
+	/* Prevents text from wrapping */
+	width: auto;
 }
 
 .viewMore,
+.shopNow,
 .purchase {
 	padding: 8px 20px;
 	border: none;
@@ -21,4 +25,17 @@
 .purchase {
 	background-color: white;
 	color: black;
+}
+
+.shopNow {
+	@apply mt-2;
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+
+	&:hover {
+		background-color: #de4644;
+		color: white;
+		border: 1px solid #de4644;
+	}
 }

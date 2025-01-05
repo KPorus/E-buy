@@ -1,6 +1,6 @@
 // Import the CategoryDTO interface
 import { CategoryDTO } from "@/types/dummy/HomeCategory";
-import { FeatureDTO } from "@/types/dummy/HomeFeature";
+import { HighlightedOfferDTO } from "@/types/dummy/HomeFeature";
 import f1 from "/public/images/feature1.jpeg";
 import f2 from "/public/images/feature2.jpeg";
 import f3 from "/public/images/feature3.jpeg";
@@ -17,7 +17,7 @@ export const category: CategoryDTO[] = indexCount.map((el: number) => {
 });
 
 // Create an array of FeatureDTO objects
-export const feature: FeatureDTO[] = [
+export const highlightedOffers: HighlightedOfferDTO[] = [
   {
     title: "New",
     subTitle: "Jeans Shirt",
