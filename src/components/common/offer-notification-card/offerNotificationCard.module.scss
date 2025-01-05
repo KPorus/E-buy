@@ -1,0 +1,13 @@
+.offerNotificationCard{
+    h1{
+        background: #777777;
+        font-size: 1.2rem;
+        color: #ffffff;
+        text-align: center;
+        @apply py-4;
+    }
+
+    div{
+        @apply flex flex-col items-center;
+    }
+}

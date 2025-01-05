@@ -1,4 +1,4 @@
-import { ProductCardDTO } from '@/types/dummy/HomeProducts';
+import { ProductCardDTO } from "@/types/dummy/HomeProducts";
 import { CategoryDTO } from "@/types/dummy/HomeCategory";
 import { HighlightedOfferDTO } from "@/types/dummy/HomeFeature";
 import f1 from "/public/images/feature1.jpeg";
@@ -8,6 +8,9 @@ import f3 from "/public/images/feature3.jpeg";
 import p1 from "/public/images/Pro1.jpg";
 import p2 from "/public/images/Pro2.jpg";
 import p3 from "/public/images/Pro3.jpg";
+
+import watch from "/public/images/watch.jpg";
+import { HotDealDTO } from "@/types/dummy/HomeHotDeals";
 // Create an array of indices
 const indexCount = Array.from(Array(8).keys());
 
@@ -39,8 +42,8 @@ export const highlightedOffers: HighlightedOfferDTO[] = [
 ];
 
 // Create an array of ProductDTO objects
-export const products: ProductCardDTO= {
-  women:[
+export const products: ProductCardDTO = {
+  women: [
     {
       title: "Silk Skirt",
       price: "$99.00",
@@ -90,7 +93,7 @@ export const products: ProductCardDTO= {
       image: p1,
     },
   ],
-  men:[
+  men: [
     {
       title: "Silk Skirt",
       price: "$99.00",
@@ -115,5 +118,41 @@ export const products: ProductCardDTO= {
       rating: 4.5,
       image: p3,
     },
-]
+  ],
 };
+
+export const hotdeals:HotDealDTO[] = [
+  {
+    name: "Smart Watch",
+    rating: 4.5,
+    image: watch,
+    timer: {
+      days: 23,
+      hours: 15,
+      minutes: 30,
+      seconds: 59,
+    },
+  },
+  {
+    name: "Smart Watch",
+    rating: 4.5,
+    image: watch,
+    timer: {
+      days: 12,
+      hours: 15,
+      minutes: 30,
+      seconds: 59,
+    },
+  },
+  {
+    name: "Smart Watch",
+    rating: 4.5,
+    image: watch,
+    timer: {
+      days: 2,
+      hours: 15,
+      minutes: 30,
+      seconds: 59,
+    },
+  },
+];
