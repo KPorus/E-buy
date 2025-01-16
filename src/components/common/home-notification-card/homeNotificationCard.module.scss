@@ -1,18 +1,38 @@
-.homeNotificationCard{
+.homeNotificationCard {
     @apply relative border-x-2 border-b-2 border-slate-800;
-    h1{
+
+    h1 {
         background: #777777;
         font-size: 1.2rem;
         color: #ffffff;
         text-align: center;
         @apply py-4;
     }
-    .timer{
+
+    .timer {
         @apply flex gap-2;
-        .timerUnit{
+
+        .timerUnit {
             @apply border border-neutral-900 flex flex-col items-center gap-2 p-2;
         }
     }
+
+
+    .productCard {
+        @apply flex justify-around gap-4 border-b-2 border-neutral-900 pb-2;
+
+        &:hover>.productDetails {
+            h2 {
+                @apply text-red-500;
+            }
+        }
+
+        &:hover h2 {
+            @apply text-red-500;
+        }
+
+    }
+
     .sliderButton {
         // position: absolute;
         top: 86%;
@@ -28,14 +48,14 @@
         -moz-transition: opacity 0.3s ease;
         -ms-transition: opacity 0.3s ease;
         -o-transition: opacity 0.3s ease;
-      }
-      
+    }
+
     .disabledButton {
         background: transparent;
         border: 1px solid #fff;
         // opacity: 0.5; 
         padding: 9px 10px;
         cursor: not-allowed;
-      }
-      
+    }
+
 }

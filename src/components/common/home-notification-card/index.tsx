@@ -11,8 +11,8 @@ function isHotDealDTOArray(data: any): data is HotDealDTO[] {
   return Array.isArray(data) && data.length > 0 && "name" in data[0];
 }
 
-function isProductListPropsArray(data: any): data is ProductListProps[] {
-  return Array.isArray(data) && data.length > 0 && "products" in data[0];
+function isProductListPropsArray(data: any): data is ProductListProps {
+  return Array.isArray(data.products) && data.products.length > 0 && data.id;
 }
 
 function isMessageArray(data: any): data is { message: string }[] {
@@ -38,7 +38,10 @@ const HomeNotificationCard = ({
 
   if (isHotDealDTOArray(data)) {
     return (
-      <div id="ts--home-notification-card" className={styles.homeNotificationCard}>
+      <div
+        id="ts--home-notification-card"
+        className={styles.homeNotificationCard}
+      >
         <h1>Hot Deals</h1>
         <div className="flex items-center justify-center">
           <div className="flex flex-col items-center justify-center">
@@ -90,12 +93,27 @@ const HomeNotificationCard = ({
     );
   } else if (isProductListPropsArray(data)) {
     return (
-      <div>
+      <div
+        id="ts--home-notification-card"
+        className={styles.homeNotificationCard}
+      >
         <h1>Latest Products</h1>
-        {data.map((product, index) => (
-          <div key={index}>
-            <h2>{product.id}</h2>
-            {/* Render product details */}
+        {data.products.map((product, index) => (
+          <div key={index} className={styles.productCard}>
+            <div className="w-[60px] h-[60px] overflow-hidden">
+              <Image
+                src={product.image.src}
+                alt={`Image of ${product.title}`}
+                width={60}
+                height={60}
+              />
+            </div>
+
+            <div className={styles.productDetails}>
+              <h2>{product.title}</h2>
+              <p>{product.describtion}</p>
+            </div>
+            <h2>{product.price}</h2>
           </div>
         ))}
       </div>

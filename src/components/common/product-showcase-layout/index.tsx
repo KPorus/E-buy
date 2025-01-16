@@ -24,7 +24,7 @@ const ProductShowcase = ({
   return (
     <div id={`ts--product-showcase--${id}`} className="flex gap-5 mb-12">
       {/* Notifications Section */}
-      <div className="w-1/2 flex flex-col gap-5">
+      <div className="w-1/2 flex flex-col gap-24">
         {notifications.map((notification, index) => {
           const { Component} = notification;
           return <Component key={index} data={notification.data} />;

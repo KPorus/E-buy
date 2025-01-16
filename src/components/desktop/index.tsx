@@ -5,8 +5,9 @@ import ProductShowcase from "../common/product-showcase-layout";
 import TopPicks from "./top-picks";
 import NewProducts from "./new-products";
 import HomeNotificationCard from "../common/home-notification-card";
-import { hotdeals } from "../common/dummy/dummy";
+import { hotdeals, latestProducts } from "../common/dummy/dummy";
 import { HotDealDTO } from "@/types/dummy/HomeHotDeals";
+import { ProductListProps } from "@/types/dummy/HomeLatestProducts";
 const DesktopPage = () => {
   return (
     <div>
@@ -24,7 +25,7 @@ const DesktopPage = () => {
           },
           {
             Component: HomeNotificationCard,
-            data: hotdeals as HotDealDTO[],
+            data: latestProducts as ProductListProps,
           }
         ]}
       />
