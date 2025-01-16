@@ -34,6 +34,7 @@ const VerticalSlider = ({ title, data, category }: VerticalSliderProps) => {
   };
 
   const getProductsForCurrentPage = () => {
+    // console.log(currentPage);
     const startIndex = currentPage * productsPerPage;
     return filteredProducts.slice(startIndex, startIndex + productsPerPage);
   };

@@ -123,7 +123,7 @@ export const products: ProductCardDTO = {
 
 export const hotdeals:HotDealDTO[] = [
   {
-    name: "Smart Watch",
+    name: "Smart Watch1",
     rating: 4.5,
     image: watch,
     timer: {
@@ -134,7 +134,7 @@ export const hotdeals:HotDealDTO[] = [
     },
   },
   {
-    name: "Smart Watch",
+    name: "Smart Watch2",
     rating: 4.5,
     image: watch,
     timer: {
@@ -145,7 +145,7 @@ export const hotdeals:HotDealDTO[] = [
     },
   },
   {
-    name: "Smart Watch",
+    name: "Smart Watch3",
     rating: 4.5,
     image: watch,
     timer: {
