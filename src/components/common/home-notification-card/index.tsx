@@ -2,42 +2,46 @@
 import Image from "next/image";
 import styles from "./homeNotificationCard.module.scss";
 import Rating from "../rating";
-import { HotDealDTO } from "@/types/dummy/HomeHotDeals";
+import { HotDealDTO, Timer } from "@/types/dummy/HomeHotDeals";
+import { ProductListProps } from "@/types/dummy/HomeLatestProducts";
 import { useState } from "react";
+import Icdirection from "@/svg_icons/Icdirection";
 
 function isHotDealDTOArray(data: any): data is HotDealDTO[] {
   return Array.isArray(data) && data.length > 0 && "name" in data[0];
 }
 
+function isProductListPropsArray(data: any): data is ProductListProps[] {
+  return Array.isArray(data) && data.length > 0 && "products" in data[0];
+}
+
+function isMessageArray(data: any): data is { message: string }[] {
+  return Array.isArray(data) && "message" in data[0];
+}
+
 const HomeNotificationCard = ({
   data,
 }: {
-  data: HotDealDTO[] | { message: string }[];
+  data: HotDealDTO[] | ProductListProps[] | { message: string }[];
 }) => {
-  // State to track the current active product
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const nextProduct = (length: number) => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % length);
+  };
+
+  const prevProduct = (length: number) => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? length - 1 : prevIndex - 1
+    );
+  };
+
   if (isHotDealDTOArray(data)) {
-    const nextProduct = () => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % data.length); // Move to next product
-    };
-
-    const prevProduct = () => {
-      setActiveIndex((prevIndex) =>
-        prevIndex === 0 ? data.length - 1 : prevIndex - 1
-      ); // Move to previous product
-    };
-
     return (
-      <div
-        id="ts--home-notification-card"
-        className={styles.homeNotificationCard}
-      >
+      <div id="ts--home-notification-card" className={styles.homeNotificationCard}>
         <h1>Hot Deals</h1>
-        {/* Product Display */}
-        <div className="flex items-center justify-center pb-[4.5rem]">
+        <div className="flex items-center justify-center">
           <div className="flex flex-col items-center justify-center">
-            {/* Only show the active product */}
             <div className="transition-all duration-500">
               <Image
                 src={data[activeIndex].image.src}
@@ -48,34 +52,64 @@ const HomeNotificationCard = ({
               <div className="flex flex-col items-center gap-2">
                 <h2>{data[activeIndex].name}</h2>
                 <Rating value={data[activeIndex].rating} />
-                <p>
-                  Time Left: {data[activeIndex].timer.days}d{" "}
-                  {data[activeIndex].timer.hours}h{" "}
-                  {data[activeIndex].timer.minutes}m{" "}
-                  {data[activeIndex].timer.seconds}s
-                </p>
+                <div className={styles.timer}>
+                  {(["Days", "Hours", "Mins", "Sec"] as Array<keyof Timer>).map(
+                    (unit) => (
+                      <span key={unit} className={styles.timerUnit}>
+                        {data[activeIndex].timer[unit]}
+                        <h2>{unit.charAt(0).toUpperCase() + unit.slice(1)}</h2>
+                      </span>
+                    )
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Navigation Buttons */}
-        <button
-          onClick={prevProduct}
-          className="absolute left-1/2 bottom-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white"
-        >
-          &#10094; {/* Left Arrow */}
-        </button>
-        <button
-          onClick={nextProduct}
-          className="absolute right-1/2 bottom-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white"
-        >
-          &#10095; {/* Right Arrow */}
-        </button>
+        <div className="flex gap-4 justify-center my-3">
+          <button
+            onClick={() => prevProduct(data.length)}
+            disabled={activeIndex === 0}
+            className={`${styles.sliderButton} ${styles.left} ${
+              activeIndex === 0 ? styles.disabledButton : ""
+            }`}
+          >
+            <Icdirection bgColor="#000" />
+          </button>
+          <button
+            onClick={() => nextProduct(data.length)}
+            disabled={activeIndex === data.length - 1}
+            className={`${styles.sliderButton} ${styles.right} rotate-180 ${
+              activeIndex === data.length - 1 ? styles.disabledButton : ""
+            }`}
+          >
+            <Icdirection bgColor="#000" />
+          </button>
+        </div>
+      </div>
+    );
+  } else if (isProductListPropsArray(data)) {
+    return (
+      <div>
+        <h1>Latest Products</h1>
+        {data.map((product, index) => (
+          <div key={index}>
+            <h2>{product.id}</h2>
+            {/* Render product details */}
+          </div>
+        ))}
+      </div>
+    );
+  } else if (isMessageArray(data)) {
+    return (
+      <div>
+        {data.map((msg, index) => (
+          <p key={index}>{msg.message}</p>
+        ))}
       </div>
     );
   } else {
-    return data.map((msg, index) => <p key={index}>{msg.message}</p>);
+    return <div>No data available</div>;
   }
 };
 

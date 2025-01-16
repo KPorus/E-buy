@@ -7,4 +7,35 @@
         text-align: center;
         @apply py-4;
     }
+    .timer{
+        @apply flex gap-2;
+        .timerUnit{
+            @apply border border-neutral-900 flex flex-col items-center gap-2 p-2;
+        }
+    }
+    .sliderButton {
+        // position: absolute;
+        top: 86%;
+        z-index: 1;
+        background-color: #de4644;
+        color: #fff;
+        border: none;
+        padding: 10px 10px;
+        cursor: pointer;
+        box-shadow: -2px 2px 12px -2px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.3s ease;
+        -webkit-transition: opacity 0.3s ease;
+        -moz-transition: opacity 0.3s ease;
+        -ms-transition: opacity 0.3s ease;
+        -o-transition: opacity 0.3s ease;
+      }
+      
+    .disabledButton {
+        background: transparent;
+        border: 1px solid #fff;
+        // opacity: 0.5; 
+        padding: 9px 10px;
+        cursor: not-allowed;
+      }
+      
 }

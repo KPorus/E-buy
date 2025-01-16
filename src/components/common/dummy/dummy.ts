@@ -11,6 +11,7 @@ import p3 from "/public/images/Pro3.jpg";
 
 import watch from "/public/images/watch.jpg";
 import { HotDealDTO } from "@/types/dummy/HomeHotDeals";
+import { ProductListProps } from "@/types/dummy/HomeLatestProducts";
 // Create an array of indices
 const indexCount = Array.from(Array(8).keys());
 
@@ -66,7 +67,7 @@ export const products: ProductCardDTO = {
       title: "Silk Skirt",
       price: "$99.00",
       rating: 4,
-      image: p1,
+      image: p3,
     },
     {
       title: "Silk Skirt",
@@ -121,16 +122,16 @@ export const products: ProductCardDTO = {
   ],
 };
 
-export const hotdeals:HotDealDTO[] = [
+export const hotdeals: HotDealDTO[] = [
   {
     name: "Smart Watch1",
     rating: 4.5,
     image: watch,
     timer: {
-      days: 23,
-      hours: 15,
-      minutes: 30,
-      seconds: 59,
+      Days: 23,
+      Hours: 15,
+      Mins: 30,
+      Sec: 59,
     },
   },
   {
@@ -138,10 +139,10 @@ export const hotdeals:HotDealDTO[] = [
     rating: 4.5,
     image: watch,
     timer: {
-      days: 12,
-      hours: 15,
-      minutes: 30,
-      seconds: 59,
+      Days: 12,
+      Hours: 15,
+      Mins: 30,
+      Sec: 59,
     },
   },
   {
@@ -149,10 +150,46 @@ export const hotdeals:HotDealDTO[] = [
     rating: 4.5,
     image: watch,
     timer: {
-      days: 2,
-      hours: 15,
-      minutes: 30,
-      seconds: 59,
+      Days: 2,
+      Hours: 15,
+      Mins: 30,
+      Sec: 59,
     },
   },
 ];
+
+export const latestProducts: ProductListProps = {
+  id: "latest-products",
+  products: [
+    {
+      title: "Latest Product 1",
+      price: "$99.00",
+      describtion: "This is the latest product",
+      image: p1,
+    },
+    {
+      title: "Latest Product 2",
+      price: "$99.00",
+      describtion: "This is the latest product",
+      image: p1,
+    },
+    {
+      title: "Latest Product 3",
+      price: "$99.00",
+      describtion: "This is the latest product",
+      image: p1,
+    },
+    {
+      title: "Latest Product 4",
+      price: "$99.00",
+      describtion: "This is the latest product",
+      image: p1,
+    },
+    {
+      title: "Latest Product 5",
+      price: "$99.00",
+      describtion: "This is the latest product",
+      image: p1,
+    },
+  ],
+};

@@ -15,8 +15,13 @@ const DesktopPage = () => {
       <FeatureProducts/>
       <ProductShowcase
         title="Feature Products"
+        id={"top-picks"}
         Component={TopPicks}
         notifications={[
+          {
+            Component: HomeNotificationCard,
+            data: hotdeals as HotDealDTO[],
+          },
           {
             Component: HomeNotificationCard,
             data: hotdeals as HotDealDTO[],
@@ -25,6 +30,7 @@ const DesktopPage = () => {
       />
       <ProductShowcase
         title="New Products"
+        id={"new-products"}
         Component={NewProducts}
         notifications={[
           {

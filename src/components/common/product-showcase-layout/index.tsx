@@ -11,17 +11,18 @@ interface NotificationProps {
 interface ProductShowcaseProps {
   title: string;
   Component: React.ComponentType<{ sectionTitle: string }>;
-  data?: any;
+  id?: any;
   notifications: NotificationProps[];
 }
 
 const ProductShowcase = ({
   title,
   Component,
+  id,
   notifications,
 }: ProductShowcaseProps) => {
   return (
-    <div className="flex gap-5 mb-12">
+    <div id={`ts--product-showcase--${id}`} className="flex gap-5 mb-12">
       {/* Notifications Section */}
       <div className="w-1/2 flex flex-col gap-5">
         {notifications.map((notification, index) => {

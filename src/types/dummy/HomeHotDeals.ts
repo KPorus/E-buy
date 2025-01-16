@@ -1,10 +1,10 @@
 import { StaticImageData } from "next/image";
 
-interface Timer {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
+export interface Timer {
+    Days: number;
+    Hours: number;
+    Mins: number;
+    Sec: number;
   }
   
 
